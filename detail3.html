@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>おしゃれガレージ - ShelterHouse</title>
+
+    <!-- Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="ShelterHouse - 富山の木造非住宅建築専門"
+    />
+    <meta property="og:image" content="IMAGE/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <style>
+      :root {
+        --primary-color: #003373;
+        --accent-color: #e60023;
+        --text-dark: #1a1a1a;
+      }
+
+      body {
+        font-family: "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+      }
+      /*NAV*/
+      nav.navbar {
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      nav .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--primary-color);
+      }
+
+      nav .logo img {
+        width: 36px;
+        margin-right: 8px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        width: 24px;
+        height: 20px;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .hamburger span {
+        display: block;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 2px;
+        transition: 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile nav */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 56px;
+          right: 0;
+          background: white;
+          height: calc(100vh - 56px);
+          width: 220px;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 2rem;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+          transform: translateX(100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 999;
+        }
+
+        .nav-links.active {
+          transform: translateX(0);
+        }
+
+        .nav-links li {
+          margin-bottom: 1rem;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /*header*/
+      .hero {
+        background: linear-gradient(
+            to right,
+            rgba(17, 22, 60, 0.85),
+            rgba(7, 25, 161, 0.2)
+          ),
+          url("IMAGE/c-dustin-91AQt9p4Mo8-unsplash.jpg") center/cover no-repeat;
+        color: white;
+        padding: 160px 20px 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 60vh;
+        box-sizing: border-box;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      /* ✅ Responsive adjustments */
+      @media (max-width: 1024px) {
+        .hero {
+          padding: 120px 16px 80px;
+        }
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 100px 14px 60px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 80px 12px 50px;
+        }
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+        .hero p {
+          font-size: 0.95rem;
+        }
+      }
+
+      /*display1*/
+      .detail {
+        font-family: "Helvetica Neue", sans-serif;
+        background-color: #fff;
+        color: #000;
+      }
+
+      .garage-section {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        border-top: 3px solid #d81b60;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 auto 20px;
+        padding-bottom: 10px;
+        width: fit-content;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .image-box img {
+        max-width: 100%;
+        width: 500px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .text-box {
+        max-width: 400px;
+      }
+
+      .text-box h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+
+      .text-box p {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .section-title,
+      .section-title2 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        padding-bottom: 20px;
+        margin: 40px auto 30px;
+        border-bottom: 3px solid #f05378;
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      /*display2*/
+      .section-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .custom-carousel-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .carousel-inner .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .carousel-inner .col-md-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .carousel-item img {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /*display3*/
+      .detail3 {
+        font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+        margin-top: 20px;
+        background: #fff;
+      }
+
+      .plan-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: auto;
+        gap: 30px;
+        padding: 0 20px 50px;
+      }
+
+      .plan-image img {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .plan-details {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .plan-box {
+        margin-bottom: 20px;
+      }
+
+      .plan-box-header {
+        background-color: #f05378;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 16px;
+        text-align: left;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      td {
+        padding: 8px 4px;
+        border-bottom: 1px dotted #ccc;
+      }
+
+      .price-box {
+        margin-bottom: 20px;
+      }
+  .highlight-price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #000;
+      padding: 10px 15px;
+    }
+      .contact-text {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 15px 0;
+        color: #000;
+      }
+      /* Container max width 1100px */
+      .container {
+        max-width: 1100px !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      /* Make hero text centered and flexible */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Responsive images */
+      .garage-img,
+      .carousel-item img,
+      #plan img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Align text and image side by side, stack on small screens */
+      .container.d-flex.flex-column.flex-lg-row,
+      #plan > .container.d-flex.flex-column.flex-lg-row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 30px;
+      }
+
+      /* On smaller screens, stack vertically */
+      @media (max-width: 992px) {
+        .container.d-flex.flex-column.flex-lg-row,
+        #plan > .container.d-flex.flex-column.flex-lg-row {
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center;
+        }
+        .container.d-flex.flex-column.flex-lg-row > img,
+        #plan > .container.d-flex.flex-column.flex-lg-row > img {
+          max-width: 90%;
+        }
+      }
+
+      /* Text block styling */
+      .container.d-flex.flex-column.flex-lg-row > div,
+      #plan > .container.d-flex.flex-column.flex-lg-row > div.flex-grow-1 {
+        max-width: 500px;
+      }
+
+      /* Carousel container max width */
+      .custom-carousel-container {
+        max-width: 1100px;
+        margin: 0 auto 50px;
+      }
+
+      /* Carousel images and columns */
+      .carousel-inner .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .carousel-inner .col-md-4 {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .carousel-item img {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+      }
+
+      /* Adjust carousel controls */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: invert(1); /* white arrows on dark background */
+      }
+      /*footer*/
+      .site-footer {
+        background: var(--primary-color, #003373);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-logo {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        color: #ffffffcc;
+      }
+
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .footer-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .footer-nav a:hover {
+        color: var(--accent-color, #ffcc00);
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 600px) {
+        .footer-nav {
+          flex-direction: column;
+          gap: 8px;
+          padding-top: 10px;
+        }
+
+        .footer-logo {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--NAV-->
+    <nav class="navbar" role="navigation" aria-label="Primary Navigation">
+      <a href="index.html" style="text-decoration: none">
+        <div
+          class="logo"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
+          <img src="IMAGE/SHELTER_SIMPLE_ロゴ.png" alt="Logo" />
+          ShelterHouse
+        </div>
+      </a>
+
+      <button
+        class="hamburger"
+        aria-label="メニューを開閉"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+        id="hamburger-btn"
+        type="button"
+        data-aos="fade-down"
+        data-aos-delay="100"
+        data-aos-duration="700"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-menu">
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#lineup">商品一覧</a></li>
+        <li><a href="#service">参考事例</a></li>
+        <li><a href="#jwood">JWOOD工法</a></li>
+        <li><a href="#contact">会社概要</a></li>
+      </ul>
+    </nav>
+
+    <!--Banner-->
+    <header
+      class="hero fade-in myphoto"
+      id="home"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+    >
+      <h1>建築の技術はここから始まる</h1>
+      <p>富山の木造倉庫・非住宅専門店 | ご相談はお気軽に 📞 0800-200-2661</p>
+    </header>
+
+    <!--display1-->
+    <section
+      id="detail"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-once="true"
+    >
+      <h2 class="section-title">プレハブ店舗・事務所</h2>
+      <div
+        class="container d-flex flex-column flex-lg-row align-items-center gap-4"
+      >
+        <img
+          src="IMAGE/detail3-1.jpg"
+          alt="ガレージの画像"
+          class="img-fluid garage-img"
+          style="max-width: 500px"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        />
+        <div data-aos="fade-left" data-aos-delay="500">
+          <h3>飲食店やインドアゴルフ場など店舗としても活用可能！</h3>
+          <p>
+          ロードサイド店舗やゴルフの練習場、美容室など、店舗として<br />
+          の活用もご提案できます。<br/>
+         鉄骨を活用した店舗から、木のぬくもりを感じられる木造建築<br/>
+        の店舗まで、お客様のご要望にベストなご提案をいたします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--display2-->
+    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">
+      施工事例
+    </h2>
+    <div
+      class="container text-center custom-carousel-container"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="1000"
+    >
+      <div
+        id="multiImageCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#multiImageCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#multiImageCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#multiImageCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row gx-3">
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-2.jpg"
+                  class="d-block w-100"
+                  alt="施工例1"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-3.jpg"
+                  class="d-block w-100"
+                  alt="施工例2"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-4.jpg"
+                  class="d-block w-100"
+                  alt="施工例3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row gx-3">
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-8.jpg"
+                  class="d-block w-100"
+                  alt="施工例1"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-6.jpg"
+                  class="d-block w-100"
+                  alt="施工例2"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-7.jpg"
+                  class="d-block w-100"
+                  alt="施工例3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row gx-3">
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-8.jpg"
+                  class="d-block w-100"
+                  alt="施工例1"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-9.jpg"
+                  class="d-block w-100"
+                  alt="施工例2"
+                />
+              </div>
+              <div class="col-4">
+                <img
+                  src="IMAGE/detail3-3.jpg"
+                  class="d-block w-100"
+                  alt="施工例3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#multiImageCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">前へ</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#multiImageCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">次へ</span>
+        </button>
+      </div>
+    </div>
+
+    <!--display3-->
+    <section
+      id="plan"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-once="true"
+    >
+      <h2 class="section-title">参考プラン</h2>
+      <div class="container d-flex flex-column flex-lg-row gap-4">
+        <img
+          src="IMAGE/detail3-1.jpg"
+          class="img-fluid garage-img"
+          alt="参考プランの画像"
+          style="max-width: 500px"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        />
+ 
+        <div class="flex-grow-1" data-aos="fade-left" data-aos-delay="500">
+          <div class="plan-box">
+            <div class="plan-box-header">参考プラン</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>幅（外寸）：</td>
+                  <td>2.4m</td>
+                </tr>
+                <tr>
+                  <td>長さ（外寸）：</td>
+                  <td>8.1m</td>
+                </tr>
+                <tr>
+                  <td>高さ（軒高）：</td>
+                  <td>4.1m</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+           <div class="plan-box">
+            <div class="plan-box-header">本体価格</div>
+             <div class="highlight-price">お問い合わせください</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>建物面積（㎡）：</td>
+                  <td>196.8㎡（単価：お問い合わせください）</td>
+                </tr>
+                <tr>
+                  <td>建物面積（坪）：</td>
+                  <td>59.6坪（単価：お問い合わせください）</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+           <div class="plan-box">
+            <div class="plan-box-header">別途工事</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>基礎工事、土間コンクリート工事、電気給排水工事等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="site-footer fade-in">
+      <div class="footer-container">
+        <p class="footer-logo">&copy; 2025 <strong>ShelterHouse</strong></p>
+        <nav class="footer-nav">
+          <a href="#">ホーム</a>
+          <a href="#lineup">商品</a>
+          <a href="#service">参考事例</a>
+          <a href="#jwood">JWOOD工法</a>
+          <a href="#contact">会社概要</a>
+        </nav>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Hamburger toggle for mobile menu
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const navLinks = document.getElementById("primary-menu");
+
+      hamburgerBtn.addEventListener("click", () => {
+        const expanded =
+          hamburgerBtn.getAttribute("aria-expanded") === "true" || false;
+        hamburgerBtn.setAttribute("aria-expanded", !expanded);
+        navLinks.classList.toggle("active");
+        hamburgerBtn.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

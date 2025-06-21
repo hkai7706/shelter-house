@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta name="robots" content="index, follow" />
+<meta property="og:title" content="ShelterHouse - 富山の木造非住宅建築専門" />
+<meta property="og:image" content="IMAGE/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="styles/navbar.css" rel="stylesheet" type="text/css">
+  <title>ShelterHouse</title>
+
+  <style>
+    .hero {
+  background: linear-gradient(
+      to right,
+      rgba(17, 22, 60, 0.85),
+      rgba(7, 25, 161, 0.2)
+    ),
+    url("IMAGE/c-dustin-91AQt9p4Mo8-unsplash.jpg") center/cover no-repeat;
+  color: white;
+  padding: 160px 20px 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+  </style>
+</head>
+<body>
+<div id="preloader"></div>
+
+  <!--  Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Primary Navigation">
+    <a href="index.html" style="text-decoration: none;">
+      <div class="logo">
+        <img src="IMAGE/SHELTER_SIMPLE_ロゴ.png" alt="Logo" />
+        ShelterHouse
+      </div>
+    </a>
+
+    <button class="hamburger" aria-label="メニューを開閉" aria-expanded="false" aria-controls="primary-menu" id="hamburger-btn" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="primary-menu">
+      <li><a href="#home">ホーム</a></li>
+      <li><a href="#lineup">商品一覧</a></li>
+      <li><a href="#service">参考事例</a></li>
+      <li><a href="#jwood">JWOOD工法</a></li>
+      <li><a href="#contact">会社概要</a></li>
+    </ul>
+  </nav>
+<section id="lineup" class="fade-in" data-aos="fade-up" data-aos-duration="1000">
+
+  <!--Header-->
+<header class="hero fade-in myphoto" id="home">
+  <h1>建築の技術はここから始まる</h1>
+  <p>富山の木造倉庫・非住宅専門店 | ご相談はお気軽に 📞 0800-200-2661</p>
+</header>
+
+
+<!--Line up-->
+
+  <section id="lineup" class="fade-in">
+  <h2 class="section-title">商品ラインナップ</h2>
+
+  <div class="lineup-wrapper">
+    <!-- First row: 3 images -->
+    <div class="lineup-row">
+      <a href="detail.html" class="img-container">
+        <img src="IMAGE/detail2-2.jpg" alt="木造の倉庫" />
+        <div class="overlay-texts">木造の倉庫</div>
+      </a>
+      <a href="detail2.html" class="img-container">
+        <img src="IMAGE/detail2-1.jpg" alt="木造の大空間施設" />
+        <div class="overlay-texts">木造の大空間施設</div>
+      </a>
+      <a href="detail3.html" class="img-container">
+        <img src="IMAGE/detail3-1.jpg" alt="木造の店舗・テナント" />
+        <div class="overlay-texts">木造の店舗・テナント</div>
+      </a>
+    </div>
+
+    <div class="lineup-row second-row">
+      <a href="detail4.html" class="img-container">
+        <img src="IMAGE/detail4-1.jpg" alt="木造の福祉施設" />
+        <div class="overlay-texts">木造の福祉施設</div>
+      </a>
+      <a href="detail5.html" class="img-container">
+        <img src="IMAGE/detail5-1.jpg" alt="木造の幼稚園・学校" />
+        <div class="overlay-texts">木造の幼稚園・学校</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!--CTA block-->
+<section id="catalog" class="fade-in">
+  <h2 class="section-title">資料請求・見積</h2>
+
+  <div class="container-row">
+    <div class="con">
+      <img
+        src="IMAGE/f47a1f11198985ac355b4f7f1e1975a6.jpg"
+        alt="カタログ請求"
+        class="img"
+      />
+      <div class="catalog-overlay">
+        <div class="catalog-overlay-text"><a href="#">カタログ請求</a></div>
+        <button class="button button1">▸カタログ請求はコチラ👉</button>
+      </div>
+    </div>
+    <div class="con">
+      <img
+        src="IMAGE/f2992f23b3248689514e477635aa5953.png"
+        alt="相談・見積"
+        class="img"
+      />
+      <div class="catalog-overlay">
+        <div class="catalog-overlay-text"><a href="#">相談・見積</a></div>
+        <button class="button button1">▸相談・見積はコチラ👉</button>
+      </div>
+    </div>
+  </div>
+ 
+  <!--Portofilo-->
+   <section id="service" class="fade-in">
+    <h2 class="section-title">参考事例</h2>
+    <!-- Portfolio items -->
+      <div id="service">
+      <section class="portfolio" aria-label="Project Portfolio">
+        <div class="box">
+          <div class="portfolio-grid">
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Modern skyscraper project in downtown"
+            >
+              <img class="project-image" src="IMAGE/house1.png" />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Residential housing development in suburban area"
+            >
+              <img
+                class="project-image"
+                src="IMAGE/house2.png"
+                alt="Suburban residential housing development with multiple homes"
+              />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Office complex construction site with heavy machinery"
+            >
+              <img class="project-image" src="IMAGE/house3.png" />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Office complex construction site with heavy machinery"
+            >
+              <img class="project-image" src="IMAGE/house4.png" />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Office complex construction site with heavy machinery"
+            >
+              <img class="project-image" src="IMAGE/house5.png" />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+            <article
+              class="project-card"
+              tabindex="0"
+              aria-label="Office complex construction site with heavy machinery"
+            >
+              <img class="project-image" src="IMAGE/house6.png" />
+              <div class="project-info">
+                <h3 class="project-title">高岡市</h3>
+                <p class="project-location">富山県</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+<!--Jwood-->
+  <section id="jwood" class="fade-in">
+    <h2 class="section-title">JWOOD工法</h2>
+    <!-- JWOOD info/images -->
+      <!--Mid Line text-->
+    <div id="jwood">
+      <!--Mid Line Text-->
+      <!-- J wood Start-->
+      <div class="custom-container-row">
+        <div class="custom-container">
+          <img src="IMAGE/jwood1.png" class="custom-img" />
+        </div>
+        <div class="custom-container">
+          <img src="IMAGE/jwood2.png" class="custom-img" />
+        </div>
+      </div>
+    </div>
+    <!-- J WOOD End-->
+  </section>
+
+<!--testimonial-->
+<section id="testimonials" class="fade-in">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-item">
+      <p>シェルター・ハウスの効率的な建設プロセスと地域開発へのコミットメントは素晴らしいです！</p>
+      <strong>— 鈴木 美香, 富山市</strong>
+    </div>
+    <div class="testimonial-item">
+      <p>彼らの職人技は品質の真の伝統を反映していると感じました。</p>
+      <strong>— 渡辺 博史, 高岡市</strong>
+    </div>
+    <div class="testimonial-item">
+      <p>シェルター・ハウスの建築技術と迅速な対応に感動しました。信頼できるパートナーです。</p>
+      <strong>— 田中 一郎, 富山市</strong>
+    </div>
+    <div class="testimonial-item">
+      <p>デザインも品質も期待以上で、大満足です。スタッフの皆さんの丁寧な説明も安心できました。</p>
+      <strong>— 佐藤 恵美, 高岡市</strong>
+    </div>
+    <div class="testimonial-item">
+      <p>予算内で理想的な木造倉庫が完成しました。今後もぜひお願いしたいと思います。</p>
+      <strong>— 中村 太郎, 射水市</strong>
+    </div>
+    <div class="testimonial-item">
+      <p>細部までこだわった施工で、長く使える施設を作っていただきました。感謝しています。</p>
+      <strong>— 山本 美咲, 黒部市</strong>
+    </div>
+  </div>
+</section>
+
+<!--company video-->
+  <section id="company-video" class="fade-in">
+  <h2 class="section-title">会社紹介ビデオ</h2>
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/LpuCtrCRtII?si=AweOigDR56u0-sGQ" 
+      frameborder="0" 
+      allowfullscreen
+      loading="lazy"
+      title="会社紹介ビデオ"
+    ></iframe>
+  </div>
+</section>
+
+<!--contact us-->
+<section id="contact" class="fade-in">
+  <h2 class="section-title">お問い合わせ</h2>
+
+  <div class="contact-grid">
+    <!-- Contact Info & Map -->
+    <div class="contact-info">
+      <h3>連絡する</h3>
+      <p><strong>住所:</strong> 933-0062 富山県高岡市江尻846-1</p>
+      <p><strong>電話番号:</strong> 0766-30-2582</p>
+      <p><strong>ウェブサイト:</strong> <a href="https://www.fujisou-ainos.com/" target="_blank">https://www.fujisou-ainos.com/</a></p>
+      <p><strong>受付時間:</strong> 金〜火：午前9時〜午後6時</p>
+
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.2123574972998!2d137.02538307564362!3d36.76547277225708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff79d53089ce30d%3A0x1dde939125418fa6!2sFujiso!5e0!3m2!1sen!2sjp!4v1749996331165!5m2!1sen!2sjp"
+          width="100%"
+          height="100%"
+          loading="lazy"
+          style="border:0;"
+          allowfullscreen=""
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('メッセージを送信しました！');">
+      <h3>お問い合わせ</h3>
+
+      <label for="name">氏名</label>
+      <input type="text" id="name" name="name" required placeholder="あなたの氏名" />
+
+      <label for="email">メール</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+      <label for="phone">電話番号</label>
+      <input type="tel" id="phone" name="phone" placeholder="任意" />
+
+      <label for="message">メッセージ</label>
+      <textarea id="message" name="message" required placeholder="ご用件をこちらにご記入ください..."></textarea>
+
+      <button type="submit">送信</button>
+    </form>
+  </div>
+</section>
+</section>
+<button id="toTop" title="Go to top">↑</button>
+
+<!--Footer-->
+<footer class="site-footer fade-in">
+  <div class="footer-container">
+    <p class="footer-logo">&copy; 2025 <strong>ShelterHouse</strong></p>
+    <nav class="footer-nav">
+      <a href="#">ホーム</a>
+      <a href="#lineup">商品</a>
+      <a href="#service">参考事例</a>
+      <a href="#jwood">JWOOD工法</a>
+      <a href="#contact">会社概要</a>
+    </nav>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+ <script src="scripts/navbar.js"></script>
+
+</body>
+</html>
